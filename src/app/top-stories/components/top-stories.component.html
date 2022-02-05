@@ -1,1 +1,20 @@
 <p>top-stories works!</p>
+<div class="main-content">
+    <div class="loading-section" *ngIf="!items">
+        <div class="loader">
+          Loading...
+        </div>
+    </div>
+    <div *ngIf="items">
+        <ol>
+            <li *ngFor="let item of items; let i = index" class="post">
+              Story #{{i}}
+            </li>
+          </ol>
+          <div class="nav">
+            <a href="" class="more">
+              More ›
+            </a>
+          </div>
+    </div>
+  </div>

@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-stories.component.scss']
 })
 export class TopStoriesComponent implements OnInit {
-
+  items: number[] = [];
   constructor() { }
 
   ngOnInit(): void {
+    console.log('test');
+    this.items = Array(5);
   }
 
 }

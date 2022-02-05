@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MainNavigationComponent} from './main-navigation.component';
 import {MenubarModule} from 'primeng/menubar';
-
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { TabViewModule } from 'primeng/tabview';
 
 
 
@@ -14,7 +16,9 @@ import {MenubarModule} from 'primeng/menubar';
   imports: [
     CommonModule,
     MainNavigationRoutingModule,
-    MenubarModule
+    MenubarModule,
+    InputTextModule,
+    TabViewModule
   ],
   exports: [
     MainNavigationComponent
