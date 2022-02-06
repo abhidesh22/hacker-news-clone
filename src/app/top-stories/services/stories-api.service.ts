@@ -12,8 +12,6 @@ export class StoriesApiService {
   }
 
   getTopStories(): Observable<any> {
-    // return this.http.get(`${this.baseUrl}/topstories.json`)
-    //                 .map(response => response.json());
     return this.hackernewsApiService.universalGetApi("topstories");
   }
 }

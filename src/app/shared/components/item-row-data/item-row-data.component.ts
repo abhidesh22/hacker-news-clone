@@ -22,7 +22,7 @@ export class ItemRowDataComponent implements OnInit {
       this.hackernewsApiService.getSingleItem(this.itemId)
       .subscribe((data: Item) => {
         this.item = data;
-        console.log(this.item);
+        //console.log(this.item);
       });
     }
   }

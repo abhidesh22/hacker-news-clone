@@ -26,7 +26,7 @@ export class ItemCommentsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.routeSubscription = this.route.params.subscribe((params) => {
-      console.log('params are', params);
+      //console.log('params are', params);
       if (params['itemId']) {
         this.itemId = params['itemId'];
       }

@@ -6,7 +6,7 @@ import {MenubarModule} from 'primeng/menubar';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { TabViewModule } from 'primeng/tabview';
-
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -18,7 +18,8 @@ import { TabViewModule } from 'primeng/tabview';
     MainNavigationRoutingModule,
     MenubarModule,
     InputTextModule,
-    TabViewModule
+    TabViewModule,
+    RouterModule
   ],
   exports: [
     MainNavigationComponent

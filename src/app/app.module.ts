@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { PanelModule } from 'primeng/panel';
 import { ItemCommentsModule } from './item-comments/item-comments.module';
 import { TopStoriesModule } from './top-stories/top-stories.module';
@@ -38,7 +39,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ItemCommentsModule,
     HttpClientModule,
     PanelModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,5 @@
 import { HackernewsApiService } from './../../services/hackernews-api.service';
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Item } from '../../models/item-info';
 
 @Component({
@@ -14,14 +13,12 @@ export class ItemCommentComponent implements OnInit {
   item!: Item;
   isExpanded: boolean = true;
 
-  constructor(private route: ActivatedRoute,
-    private hackernewsApiService: HackernewsApiService) { }
+  constructor(private hackernewsApiService: HackernewsApiService) { }
 
   ngOnInit(): void {
     this.hackernewsApiService.getSingleItem(this.itemId as number)
     .subscribe((data: Item) => {
       this.item = data;
-      console.log(this.item);
     });
   }
 

@@ -15,10 +15,8 @@ export class TopStoriesComponent implements OnInit {
   constructor(private storiesApiService: StoriesApiService) { }
 
   ngOnInit(): void {
-    console.log('test');
     this.storiesApiService.getTopStories()
     .subscribe((items: any) => {
-      console.log("test ", items);
       this.allItems = items;
       this.items = this.allItems.slice(this.start, this.start + this.count);
     });;
@@ -26,7 +24,6 @@ export class TopStoriesComponent implements OnInit {
   }
 
   loadMoreStories(): void {
-    console.log('here loadmore');
     this.count+=5;
     this.items = this.start + this.count < this.allItems.length
       ? this.allItems.slice(this.start, this.start + this.count)

@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HackernewsApiService } from '../../services/hackernews-api.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ItemRowDataComponent } from './item-row-data.component';
 
 describe('ItemRowDataComponent', () => {
@@ -8,7 +9,9 @@ describe('ItemRowDataComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ItemRowDataComponent ]
+      declarations: [ ItemRowDataComponent ],
+      providers: [HackernewsApiService, HttpClient],
+      imports: [HttpClientModule]
     })
     .compileComponents();
   });

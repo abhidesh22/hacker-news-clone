@@ -23,14 +23,12 @@ export class UserInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.routeSubscription = this.route.params.subscribe((params) => {
-      console.log('params are', params);
       if (params['userId']) {
         this.userId = params['userId'];
       }
       this.userSubscription = this.hackernewsApiService.getUserInfo(this.userId)
       .subscribe((data: UserInfo) => {
         this.userDetails = data;
-        console.log(this.userDetails)
       });
     });
   }

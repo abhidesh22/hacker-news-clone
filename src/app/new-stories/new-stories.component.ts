@@ -17,14 +17,14 @@ export class NewStoriesComponent implements OnInit {
   ngOnInit(): void {
     this.hackernewsApiService.universalGetApi("newstories")
     .subscribe((items: any) => {
-      console.log("test ", items);
+      //console.log("test ", items);
       this.allItems = items;
       this.items = this.allItems.slice(this.start, this.start + this.count);
     });;
   }
 
   loadMoreStories(): void {
-    console.log('here loadmore');
+    //console.log('here loadmore');
     this.count+=5;
     this.items = this.start + this.count < this.allItems.length
       ? this.allItems.slice(this.start, this.start + this.count)
