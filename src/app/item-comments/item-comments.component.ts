@@ -1,15 +1,48 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, Type } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { Item } from '../shared/models/item-info';
+import { HackernewsApiService } from '../shared/services/hackernews-api.service';
 
 @Component({
   selector: 'app-item-comments',
   templateUrl: './item-comments.component.html',
   styleUrls: ['./item-comments.component.scss']
 })
-export class ItemCommentsComponent implements OnInit {
+export class ItemCommentsComponent implements OnInit, OnDestroy {
+  isLoading: boolean = false;
 
-  constructor() { }
+  itemId!: number;
+  itemDetails!: Item; 
+  itemComments: number[] | undefined;
+  start: number = 0;
+  count: number = 3;
+
+  routeSubscription!: Subscription;
+  itemSubscription!: Subscription;
+  constructor(private route: ActivatedRoute,
+    private hackernewsApiService: HackernewsApiService) { }
 
   ngOnInit(): void {
+    this.routeSubscription = this.route.params.subscribe((params) => {
+      console.log('params are', params);
+      if (params['itemId']) {
+        this.itemId = params['itemId'];
+      }
+      this.itemSubscription = this.hackernewsApiService.getSingleItem(this.itemId)
+      .subscribe((data: Item) => {
+        this.itemDetails = data;
+        this.itemComments = (data.kids as number[])?.length < this.count
+          ? data.kids
+          : (data.kids as number[])?.slice(this.start, this.start + this.count);
+        console.log(this.itemDetails);
+      });
+    });
+  }
+
+  ngOnDestroy() {
+    this.routeSubscription.unsubscribe();
+    this.itemSubscription.unsubscribe();
   }
 
 }

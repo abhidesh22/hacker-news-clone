@@ -1,1 +1,20 @@
-<p>item-comment works!</p>
+<div *ngIf="!item" class="loading-section">
+    loading...
+</div>
+<div class="comment" *ngIf="item">
+    <div fxLayout fxLayoutGap="1rem">
+        <a routerLink="/login">
+            <mat-icon class="upvote">arrow_drop_up</mat-icon>
+        </a>
+            <a [routerLink]="['/user', item?.by]" class="user">{{item?.by}} | </a>
+            <a [routerLink]="['/item', item?.id]" class="time">{{item?.time | convertTime }}  </a>
+            <span *ngIf="isExpanded; else kids" (click)="isExpanded = !isExpanded">[ - ]</span>
+            <ng-template #kids>
+                <span (click)="isExpanded = !isExpanded">[ {{item.kids?.length}} more ]</span>
+            </ng-template>
+    </div>
+    <div *ngIf="isExpanded" class="kidsSection">
+        <div class="text" [innerHtml]="item?.text" ></div>
+        <a routerLink="/login" class="text">reply</a>
+    </div>
+</div>

@@ -9,15 +9,22 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ItemRowDataComponent implements OnInit {
   @Input() itemId!: number; 
+  @Input() showAddComment!: boolean; 
+  @Input() itemDetails!: Item; 
+
   item: any;
   constructor(private hackernewsApiService: HackernewsApiService) { }
 
   ngOnInit(): void {
-    this.hackernewsApiService.getSingleItem(this.itemId)
-    .subscribe((data: Item) => {
-      this.item = data;
-      console.log(this.item);
-    });
+    if(this.itemDetails) {
+      this.item = this.itemDetails;
+    } else {
+      this.hackernewsApiService.getSingleItem(this.itemId)
+      .subscribe((data: Item) => {
+        this.item = data;
+        console.log(this.item);
+      });
+    }
   }
 
 }

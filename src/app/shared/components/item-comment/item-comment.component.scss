@@ -1,0 +1,33 @@
+@import "../../../../assets/vars.scss";
+.upvote{
+    position: relative;
+    color:  #828282;
+    font-size: 36px;
+    top: 12px;
+    margin-right: 10px;
+  }
+
+.comment {
+  margin-top: 1rem;
+  color: $text-color;
+  mat-icon {
+    color: $text-color;
+  }
+  .text {
+    color: $text-color-dark;
+    text-align: start;
+    margin-left: 40px;
+    margin-right: 50px;
+    margin-top: 20px;
+  }
+  a,
+  a:active,
+  a:hover,
+  a:visited {
+    color: $text-color;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}

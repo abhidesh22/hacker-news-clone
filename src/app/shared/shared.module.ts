@@ -9,11 +9,13 @@ import { ConvertTimePipe } from './pipes/convert-time.pipe';
 import { MatDividerModule } from '@angular/material/divider';
 import {DividerModule} from 'primeng/divider';
 import { ItemCommentComponent } from './components/item-comment/item-comment.component';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 
 
 @NgModule({
   declarations: [
     ItemRowDataComponent,
+    ItemCommentComponent,
     DomainNamePipe,
     ConvertTimePipe,
     ItemCommentComponent
@@ -23,10 +25,12 @@ import { ItemCommentComponent } from './components/item-comment/item-comment.com
     RouterModule,
     MatIconModule,
     MatDividerModule,
-    DividerModule
+    DividerModule,
+    InputTextareaModule
   ],
   exports: [
     ItemRowDataComponent,
+    ItemCommentComponent,
     DomainNamePipe
   ],
   providers: [

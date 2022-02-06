@@ -1,15 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { HackernewsApiService } from './../../services/hackernews-api.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Item } from '../../models/item-info';
 
 @Component({
-  selector: 'app-item-comment',
+  selector: 'item-comment',
   templateUrl: './item-comment.component.html',
   styleUrls: ['./item-comment.component.scss']
 })
 export class ItemCommentComponent implements OnInit {
 
-  constructor() { }
+  @Input() itemId: number | undefined;
+  item!: Item;
+  isExpanded: boolean = true;
+
+  constructor(private route: ActivatedRoute,
+    private hackernewsApiService: HackernewsApiService) { }
 
   ngOnInit(): void {
+    this.hackernewsApiService.getSingleItem(this.itemId as number)
+    .subscribe((data: Item) => {
+      this.item = data;
+      console.log(this.item);
+    });
   }
 
 }
