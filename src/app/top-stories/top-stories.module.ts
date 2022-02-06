@@ -1,3 +1,5 @@
+import { StoriesApiService } from './services/stories-api.service';
+import { SharedModule } from './../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
 import { TopStoriesComponent } from './components/top-stories.component';
 import { NgModule } from '@angular/core';
@@ -13,7 +15,11 @@ const routes: Routes = [
   declarations: [TopStoriesComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    SharedModule
+  ],
+  providers: [
+    StoriesApiService
   ]
 })
 export class TopStoriesModule { }

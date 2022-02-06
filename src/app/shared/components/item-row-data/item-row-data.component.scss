@@ -1,0 +1,47 @@
+$mobile-only: "only screen and (max-width : 768px)";
+$laptop-only: "only screen and (min-width : 769px)";
+
+p {
+    margin: 2px 0;
+  }
+
+  .upvote{
+    position: relative;
+    color:  #828282;
+    font-size: 36px;
+    top: 12px;
+    margin-right: 10px;
+  }
+  a {
+    color: #000;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .subtext-class {
+    font-size: 12px;
+    color: #696969;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-left: 38px;
+    a {
+      color: #b92b27;
+
+      &:hover {
+        text-decoration: underline;
+      };
+    }
+  }
+  .domain {
+    color: #696969;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .item-details {
+    padding: 10px;
+  }

@@ -1,4 +1,3 @@
-<p>top-stories works!</p>
 <div class="main-content">
     <div class="loading-section" *ngIf="!items">
         <div class="loader">
@@ -8,13 +7,13 @@
     <div *ngIf="items">
         <ol>
             <li *ngFor="let item of items; let i = index" class="post">
-              Story #{{i}}
+                <item-row-data [itemId] = 'item'></item-row-data>
             </li>
           </ol>
           <div class="nav">
-            <a href="" class="more">
+            <button class="more" (click)="loadmore()">
               More ›
-            </a>
+            </button>
           </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-$mobile-only: "only screen and (max-width : 768px)";
+// $mobile-only: "only screen and (max-width : 768px)";
 
 a {
   color: #b92b27;
@@ -42,15 +42,6 @@ ol {
   padding: 10px 0 10px 5px;
   transition: background-color 0.2s ease;
   border-bottom: 1px solid #CECECB;
-
-  .itemNum {
-    color: #696969;
-    position: absolute;
-    width: 30px;
-    text-align: right;
-    left: 0;
-    top: 4px;
-  }
 }
 
 .item-block {
@@ -58,10 +49,10 @@ ol {
 }
 
 
-// .nav {
-//   padding: 10px 40px;
-//   margin-top: 10px;
-//   font-size: 17px;
+.nav {
+  padding: 10px 40px;
+  margin-top: 10px;
+  font-size: 17px;
 
 //   a {
 //     @media #{$mobile-only} {
@@ -78,11 +69,9 @@ ol {
 //   }
 
 //   .more {
-//     @media #{$mobile-only} {
-//       float: right;
-//     }
+//     float: right;
 //   }
-// }
+}
 
 // .job-header {
 //   font-size: 15px;

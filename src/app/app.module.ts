@@ -1,3 +1,4 @@
+import { ItemCommentsModule } from './item-comments/item-comments.module';
 import { TopStoriesModule } from './top-stories/top-stories.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,6 +15,7 @@ import { AskQuestionComponent } from './ask-question/ask-question.component';
 import { ShowsComponent } from './shows/shows.component';
 import { JobsPageComponent } from './jobs-page/jobs-page.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { NotfoundComponent } from './notfound/notfound.component';
     AppRoutingModule,
     MainNavigationModule,
     FlexLayoutModule,
-    TopStoriesModule
+    TopStoriesModule,
+    ItemCommentsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

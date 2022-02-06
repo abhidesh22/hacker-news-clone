@@ -1,3 +1,4 @@
+import { StoriesApiService } from './../services/stories-api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,11 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopStoriesComponent implements OnInit {
   items: number[] = [];
-  constructor() { }
+  allItems: number[] = [];
+  start: number = 0;
+  count: number = 5;
+
+  constructor(private storiesApiService: StoriesApiService) { }
 
   ngOnInit(): void {
     console.log('test');
-    this.items = Array(5);
+    this.storiesApiService.getTopStories()
+    .subscribe((items: any) => {
+      console.log("test ", items);
+      this.allItems = items;
+      this.items = this.allItems.slice(this.start, this.start + this.count);
+    });;
+
   }
 
+  loadmore(): void {
+    console.log('here loadmore');
+    if(this.start + this.count < this.allItems.length) {
+      this.count+=5;
+      this.items = this.allItems.slice(this.start, this.start + this.count);
+    }
+  }
 }
