@@ -1,3 +1,4 @@
+import { ButtonModule } from 'primeng/button';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ItemCommentsComponent } from './item-comments.component';
@@ -17,7 +18,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    SharedModule
+    SharedModule,
+    ButtonModule
   ]
 })
 export class ItemCommentsModule { }

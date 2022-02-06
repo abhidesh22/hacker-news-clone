@@ -20,6 +20,7 @@ export class ItemCommentsComponent implements OnInit, OnDestroy {
 
   routeSubscription!: Subscription;
   itemSubscription!: Subscription;
+
   constructor(private route: ActivatedRoute,
     private hackernewsApiService: HackernewsApiService) { }
 
@@ -32,17 +33,25 @@ export class ItemCommentsComponent implements OnInit, OnDestroy {
       this.itemSubscription = this.hackernewsApiService.getSingleItem(this.itemId)
       .subscribe((data: Item) => {
         this.itemDetails = data;
-        this.itemComments = (data.kids as number[])?.length < this.count
-          ? data.kids
-          : (data.kids as number[])?.slice(this.start, this.start + this.count);
-        console.log(this.itemDetails);
+        this.populateItemCommands();
       });
     });
   }
 
+  populateItemCommands() {
+    this.itemComments = (this.itemDetails?.kids as number[])?.length < this.count
+    ? this.itemDetails?.kids
+    : (this.itemDetails?.kids as number[])?.slice(this.start, this.start + this.count);
+  }
+
+  loadMoreComments() {
+    this.count+=3;
+    this.populateItemCommands();
+  }
+
   ngOnDestroy() {
-    this.routeSubscription.unsubscribe();
-    this.itemSubscription.unsubscribe();
+    this.routeSubscription?.unsubscribe();
+    this.itemSubscription?.unsubscribe();
   }
 
 }

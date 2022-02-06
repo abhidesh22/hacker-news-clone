@@ -1,5 +1,8 @@
+import { UserInfo } from './../shared/models/user-info';
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { HackernewsApiService } from '../shared/services/hackernews-api.service';
 @Component({
   selector: 'app-user-info',
   templateUrl: './user-info.component.html',
@@ -7,9 +10,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserInfoComponent implements OnInit {
 
-  constructor() { }
+  isLoading: boolean = false;
+
+  userId!: string;
+  userDetails!: UserInfo;
+
+  routeSubscription!: Subscription;
+  userSubscription!: Subscription;
+
+  constructor(private route: ActivatedRoute,
+    private hackernewsApiService: HackernewsApiService) { }
 
   ngOnInit(): void {
+    this.routeSubscription = this.route.params.subscribe((params) => {
+      console.log('params are', params);
+      if (params['userId']) {
+        this.userId = params['userId'];
+      }
+      this.userSubscription = this.hackernewsApiService.getUserInfo(this.userId)
+      .subscribe((data: UserInfo) => {
+        this.userDetails = data;
+        console.log(this.userDetails)
+      });
+    });
   }
 
+  ngOnDestroy() {
+    this.routeSubscription?.unsubscribe();
+    this.userSubscription?.unsubscribe();
+  }
 }

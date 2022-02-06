@@ -1,3 +1,4 @@
+import { PanelModule } from 'primeng/panel';
 import { DomainNamePipe } from './pipes/domain-name.pipe';
 import { HackernewsApiService } from './services/hackernews-api.service';
 import { RouterModule } from '@angular/router';
@@ -10,6 +11,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import {DividerModule} from 'primeng/divider';
 import { ItemCommentComponent } from './components/item-comment/item-comment.component';
 import {InputTextareaModule} from 'primeng/inputtextarea';
+import {ButtonModule} from 'primeng/button';
 
 
 @NgModule({
@@ -26,12 +28,15 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
     MatIconModule,
     MatDividerModule,
     DividerModule,
-    InputTextareaModule
+    InputTextareaModule,
+    ButtonModule,
+    PanelModule
   ],
   exports: [
     ItemRowDataComponent,
     ItemCommentComponent,
-    DomainNamePipe
+    DomainNamePipe,
+    ConvertTimePipe
   ],
   providers: [
     HackernewsApiService

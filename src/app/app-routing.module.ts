@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CustomPreloadStrategyService } from './custom-preload-strategy.service';
+import { PathResolveService } from './path-resolve.service';
 
 const routes: Routes = [
   {
@@ -31,7 +32,7 @@ const routes: Routes = [
       import("./login-page/login-page.module").then((m) => m.LoginPageModule),
   },
   {
-    path: "user",
+    path: "userinfo",
     data: {
       preload: false,
     },
@@ -53,6 +54,9 @@ const routes: Routes = [
   },
   {
     path: "**",
+    resolve: {
+      path: PathResolveService
+    },
     loadChildren: () =>
       import("./notfound/notfound.module").then(
         (m) => m.NotfoundModule

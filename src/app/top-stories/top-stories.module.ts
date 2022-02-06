@@ -1,3 +1,4 @@
+import { ButtonModule } from 'primeng/button';
 import { StoriesApiService } from './services/stories-api.service';
 import { SharedModule } from './../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
@@ -16,7 +17,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    SharedModule
+    SharedModule,
+    ButtonModule
   ],
   providers: [
     StoriesApiService

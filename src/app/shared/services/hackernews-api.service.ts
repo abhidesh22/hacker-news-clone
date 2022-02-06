@@ -20,6 +20,11 @@ export class HackernewsApiService {
   getSingleItem(id: number): Observable<any> {
     return this.http.get(`${BASE_URL}/item/${id}.json`);
   }
+
+  getUserInfo(id: string): Observable<any> {
+    return this.http.get(`${BASE_URL}/user/${id}.json`);
+  }
+
   generateApi(type: string) {
 
   }

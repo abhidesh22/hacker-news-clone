@@ -25,11 +25,11 @@ export class TopStoriesComponent implements OnInit {
 
   }
 
-  loadmore(): void {
+  loadMoreStories(): void {
     console.log('here loadmore');
-    if(this.start + this.count < this.allItems.length) {
-      this.count+=5;
-      this.items = this.allItems.slice(this.start, this.start + this.count);
-    }
+    this.count+=5;
+    this.items = this.start + this.count < this.allItems.length
+      ? this.allItems.slice(this.start, this.start + this.count)
+      : this.allItems;
   }
 }
