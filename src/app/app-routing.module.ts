@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CustomPreloadStrategyService } from './custom-preload-strategy.service';
 import { PathResolveService } from './path-resolve.service';
+import { AuthGuardService } from './shared/guards/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -36,11 +37,13 @@ const routes: Routes = [
     data: {
       preload: false,
     },
+    canActivate:[AuthGuardService],
     loadChildren: () =>
       import("./login-page/login-page.module").then((m) => m.LoginPageModule),
   },
   {
     path: "userinfo",
+    canActivate:[AuthGuardService],
     data: {
       preload: false,
     },
@@ -55,6 +58,7 @@ const routes: Routes = [
   },
   {
     path: "ask",
+    canActivate:[AuthGuardService],
     loadChildren: () => import("./ask-question/ask-question.module").then((m) => m.AskQuestionModule),
     data: {
       preload: false,
@@ -62,6 +66,7 @@ const routes: Routes = [
   },
   {
     path: "itemdetails",
+    canActivate:[AuthGuardService],
     data: {
       preload: false,
     },
