@@ -18,7 +18,7 @@ import { JobsPageComponent } from './jobs-page/jobs-page.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { interceptorProviders } from './interceptors';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +42,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     RouterModule
   ],
-  providers: [],
+  providers: [ interceptorProviders ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
