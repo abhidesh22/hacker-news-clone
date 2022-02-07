@@ -16,8 +16,10 @@ import { ShowsComponent } from './shows/shows.component';
 import { JobsPageComponent } from './jobs-page/jobs-page.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { HttpClientModule } from '@angular/common/http';
+import { reducers, metaReducers } from '../app/shared/reducers';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { interceptorProviders } from './interceptors';
+import { StoreModule } from '@ngrx/store';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,14 @@ import { interceptorProviders } from './interceptors';
     HttpClientModule,
     PanelModule,
     BrowserAnimationsModule,
-    RouterModule
+    RouterModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        // strictActionImmutability: true
+      }
+    }),
   ],
   providers: [ interceptorProviders ],
   bootstrap: [AppComponent]

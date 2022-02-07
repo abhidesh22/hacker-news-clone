@@ -10,7 +10,13 @@ import {
   import { Observable } from 'rxjs';
   import { tap, finalize } from 'rxjs/operators';
   
-  
+  /**
+ * This interceptor will be used to log the data as per the settings provided in the environment file.
+ * Currently, only the skeleton is built and logger functionality needs to be added.
+ * The log level will be provided from environment based on build whether prod or dev
+ * All http requests can be logged based on the requirement.
+ * 
+ */
   @Injectable()
   export class LoggingInterceptor implements HttpInterceptor {
     constructor( ) { }

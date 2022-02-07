@@ -15,6 +15,11 @@ export class ItemRowDataComponent implements OnInit {
   item: any;
   constructor(private hackernewsApiService: HackernewsApiService) { }
 
+  /**
+ * This component displays row data for a single item (story, ask, etc). It displays details like
+ * Title, domain, created by, date and comments hyperlink for a single item passed to this component.
+ */
+
   ngOnInit(): void {
     if(this.itemDetails) {
       this.item = this.itemDetails;
@@ -22,7 +27,6 @@ export class ItemRowDataComponent implements OnInit {
       this.hackernewsApiService.getSingleItem(this.itemId)
       .subscribe((data: Item) => {
         this.item = data;
-        //console.log(this.item);
       });
     }
   }

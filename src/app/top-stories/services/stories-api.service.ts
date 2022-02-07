@@ -10,6 +10,12 @@ export class StoriesApiService {
   constructor(private hackernewsApiService: HackernewsApiService) { 
   }
 
+  /**
+ * getTopStories: Gets the list of all Top Stories ( story ids)
+ * params: none
+ * output: Observable for the item list (number array)
+ */
+
   getTopStories(): Observable<any> {
     return this.hackernewsApiService.universalGetApi("topstories");
   }

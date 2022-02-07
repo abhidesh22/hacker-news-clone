@@ -1,6 +1,10 @@
 import { StoriesApiService } from './../services/stories-api.service';
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * This components displays the home page with top 5 stories in the start.
+ * User can click on Load more to get the display of further stories.
+ */
 @Component({
   selector: 'app-top-stories',
   templateUrl: './top-stories.component.html',

@@ -3,7 +3,12 @@ import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-
+/**
+ * This interceptor will be used for error handling of the http requests. 
+ * State can be populated with the correct error code or message and then, selectors 
+ * in the main components can use a selector to read the error from http request and then
+ * populate the error in a toast or Alert component.
+ */
 @Injectable()
 export class ServiceUnavailableInterceptor implements HttpInterceptor {
   constructor( ) { }
