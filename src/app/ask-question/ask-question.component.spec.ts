@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HackernewsApiService } from './../shared/services/hackernews-api.service';
 import { AskQuestionComponent } from './ask-question.component';
 
 describe('AskQuestionComponent', () => {
@@ -8,7 +9,9 @@ describe('AskQuestionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AskQuestionComponent ]
+      declarations: [ AskQuestionComponent ],
+      providers: [HackernewsApiService, HttpClient],
+      imports: [HttpClientModule]
     })
     .compileComponents();
   });

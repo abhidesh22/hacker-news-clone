@@ -12,6 +12,7 @@ import {DividerModule} from 'primeng/divider';
 import { ItemCommentComponent } from './components/item-comment/item-comment.component';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {ButtonModule} from 'primeng/button';
+import { DisplayItemsComponent } from './components/display-items/display-items.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {ButtonModule} from 'primeng/button';
     ItemCommentComponent,
     DomainNamePipe,
     ConvertTimePipe,
-    ItemCommentComponent
+    ItemCommentComponent,
+    DisplayItemsComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +38,8 @@ import {ButtonModule} from 'primeng/button';
     ItemRowDataComponent,
     ItemCommentComponent,
     DomainNamePipe,
-    ConvertTimePipe
+    ConvertTimePipe,
+    DisplayItemsComponent
   ],
   providers: [
     HackernewsApiService

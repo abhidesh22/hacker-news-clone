@@ -1,0 +1,8 @@
+<div>
+    <ol>
+        <li *ngFor="let item of items; let i = index" class="post">
+            <item-row-data [itemId] = 'item'></item-row-data>
+        </li>
+    </ol>
+    <button pButton type="button" label="Load More" class="p-button-link" (click)="loadMoreStories($event)"></button>
+</div>

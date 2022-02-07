@@ -25,8 +25,8 @@ export class ItemCommentsComponent implements OnInit, OnDestroy {
     private hackernewsApiService: HackernewsApiService) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.routeSubscription = this.route.params.subscribe((params) => {
-      //console.log('params are', params);
       if (params['itemId']) {
         this.itemId = params['itemId'];
       }
@@ -34,6 +34,7 @@ export class ItemCommentsComponent implements OnInit, OnDestroy {
       .subscribe((data: Item) => {
         this.itemDetails = data;
         this.populateItemCommands();
+        this.isLoading = false;
       });
     });
   }

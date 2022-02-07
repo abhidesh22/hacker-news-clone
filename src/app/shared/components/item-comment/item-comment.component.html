@@ -6,8 +6,8 @@
         <a routerLink="/login">
             <mat-icon class="upvote">arrow_drop_up</mat-icon>
         </a>
-            <a [routerLink]="['/user', item?.by]" class="user">{{item?.by}} | </a>
-            <a [routerLink]="['/item', item?.id]" class="time">{{item?.time | convertTime }}  </a>
+            <a [routerLink]="['/userinfo', item?.by]" class="user">{{item?.by}} | </a>
+            <a [routerLink]="['/itemdetails', item?.id]" class="time">{{item?.time | convertTime }}  </a>
             <span *ngIf="isExpanded; else commentCount" (click)="isExpanded = !isExpanded">[ - ]</span>
             <ng-template #commentCount>
                 <span (click)="isExpanded = !isExpanded">[ {{item.kids?.length}} more ]</span>

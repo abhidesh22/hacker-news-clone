@@ -4,7 +4,7 @@
 export const paths = {
     topstories: 'topstories',
     newstories: 'newstories',
-    past: 'past',
+    ask: 'ask',
     login: 'login',
     submit: 'submit',
     itemdetails: 'itemdetails'

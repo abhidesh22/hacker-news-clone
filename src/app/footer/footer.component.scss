@@ -1,8 +1,9 @@
+@import '../../assets/style-vars.scss';
 .footer{
     border-top: 2px solid #F00;
     padding: 1rem;
     a, a:hover, a:active, a:visited{
-        color: #000;
+        color: $text-color-dark;
         text-decoration: none;
     }
     a:hover{

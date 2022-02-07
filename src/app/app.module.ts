@@ -12,7 +12,6 @@ import { FooterComponent } from './footer/footer.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PastStoriesComponent } from './past-stories/past-stories.component';
 import { AllCommentsComponent } from './all-comments/all-comments.component';
-import { AskQuestionComponent } from './ask-question/ask-question.component';
 import { ShowsComponent } from './shows/shows.component';
 import { JobsPageComponent } from './jobs-page/jobs-page.component';
 import { NotfoundComponent } from './notfound/notfound.component';
@@ -25,7 +24,6 @@ import { interceptorProviders } from './interceptors';
     FooterComponent,
     PastStoriesComponent,
     AllCommentsComponent,
-    AskQuestionComponent,
     ShowsComponent,
     JobsPageComponent,
     NotfoundComponent

@@ -32,6 +32,14 @@ const routes: Routes = [
       import("./login-page/login-page.module").then((m) => m.LoginPageModule),
   },
   {
+    path: "submit",
+    data: {
+      preload: false,
+    },
+    loadChildren: () =>
+      import("./login-page/login-page.module").then((m) => m.LoginPageModule),
+  },
+  {
     path: "userinfo",
     data: {
       preload: false,
@@ -41,6 +49,13 @@ const routes: Routes = [
   {
     path: "newstories",
     loadChildren: () => import("./new-stories/new-stories.module").then((m) => m.NewStoriesModule),
+    data: {
+      preload: false,
+    },
+  },
+  {
+    path: "ask",
+    loadChildren: () => import("./ask-question/ask-question.module").then((m) => m.AskQuestionModule),
     data: {
       preload: false,
     },

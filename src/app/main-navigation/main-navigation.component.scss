@@ -1,5 +1,7 @@
+@import '../../assets/style-vars.scss';
+
 :host ::ng-deep .p-menubar {
-    background-color: rgb(255, 102, 0);
+    background-color: $navbar-color;
     padding: 0.5rem 1rem;
     min-height: 3rem;
     font-size: 16px;
@@ -8,19 +10,14 @@
     }
     a, a:active, a:visited, a:hover {
         text-decoration: none;
-        color: #000;
+        color: $text-color-dark;
         vertical-align:9pt;
     }
 }
 a, a:active, a:visited, a:hover {
     text-decoration: none;
-    color: #000;
+    color: $text-color-dark;
 }
-// ::ng-deep .p-menubar ul li:nth-child(1) {
-//     height: 100%;
-//     font-weight: bold;
-//     position: sticky;
-// }
 .title {
     font-weight: bold;
     color: #495057;

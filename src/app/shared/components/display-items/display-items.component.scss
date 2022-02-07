@@ -1,0 +1,59 @@
+@import "../../../../assets/style-vars.scss";
+
+a {
+  color: #b92b27;
+  text-decoration: none;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
+  };
+}
+
+ol {
+  padding: 0 40px;
+  margin: 0;
+
+  li {
+    position: relative;
+    -webkit-transition: background-color .2s ease;
+    transition: background-color .2s ease;
+  }
+}
+
+.main-content {
+  position: relative;
+  width: 100%;
+  -webkit-transition: opacity .2s ease;
+  transition: opacity .2s ease;
+  box-sizing: border-box;
+  padding: 8px 0;
+  z-index: 0;
+}
+
+.post {
+  padding: 10px 0 10px 5px;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #CECECB;
+}
+
+.item-block {
+  display: block;
+}
+
+
+.commment-section{
+    padding: 1rem;
+    color: $text-color;
+}
+.p-button-link {
+    padding: 10px 35px;
+    margin-top: 10px;
+    font-size: 17px;
+    color: $text-color;
+}
+.nav {
+  padding: 10px 40px;
+  margin-top: 10px;
+  font-size: 17px;
+}

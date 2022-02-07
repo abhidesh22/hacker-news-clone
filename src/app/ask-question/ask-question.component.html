@@ -1,1 +1,10 @@
-<p>ask-question works!</p>
+<div class="main-content">
+    <div class="loading-section" *ngIf="!items">
+        <div class="loader">
+          Loading...
+        </div>
+    </div>
+    <div *ngIf="items">
+      <app-display-items [items] = "items" (showMoreStories)="loadMoreStories()"></app-display-items>
+    </div>
+  </div>

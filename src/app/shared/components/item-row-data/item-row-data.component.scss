@@ -1,19 +1,17 @@
-$mobile-only: "only screen and (max-width : 768px)";
-$laptop-only: "only screen and (min-width : 769px)";
-
+@import "../../../../assets/style-vars.scss";
 p {
     margin: 2px 0;
   }
 
   .upvote{
     position: relative;
-    color:  #828282;
+    color:  $text-color;
     font-size: 36px;
     top: 12px;
     margin-right: 10px;
   }
   a {
-    color: #000;
+    color: $text-color-dark;
     cursor: pointer;
     text-decoration: none;
   }
