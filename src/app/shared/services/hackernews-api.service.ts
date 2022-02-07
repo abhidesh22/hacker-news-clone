@@ -25,7 +25,4 @@ export class HackernewsApiService {
     return this.http.get(`${BASE_URL}/user/${id}.json`);
   }
 
-  generateApi(type: string) {
-
-  }
 }

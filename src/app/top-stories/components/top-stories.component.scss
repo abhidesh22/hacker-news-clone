@@ -1,5 +1,4 @@
-// $mobile-only: "only screen and (max-width : 768px)";
-@import '../../../assets/vars.scss';
+@import '../../../assets/style-vars.scss';
 a {
   color: #b92b27;
   text-decoration: none;
@@ -14,12 +13,6 @@ ol {
   padding: 0 40px;
   margin: 0;
 
-//   @media #{$mobile-only} {
-//     box-sizing: border-box;
-//     list-style: none;
-//     padding: 0 10px;
-//   }
-
   li {
     position: relative;
     -webkit-transition: background-color .2s ease;
@@ -30,7 +23,6 @@ ol {
 .main-content {
   position: relative;
   width: 100%;
-//  min-height: 100vh;
   -webkit-transition: opacity .2s ease;
   transition: opacity .2s ease;
   box-sizing: border-box;
@@ -63,33 +55,4 @@ ol {
   padding: 10px 40px;
   margin-top: 10px;
   font-size: 17px;
-
-//   a {
-//     @media #{$mobile-only} {
-//       color: #B92B27;
-//       text-decoration: none;
-//     }
-//   }
-
-//   @media #{$mobile-only} {
-//     margin: 20px 0;
-//     text-align: center;
-//     padding: 10px 80px;
-//     height: 20px;
-//   }
-
-//   .more {
-//     float: right;
-//   }
 }
-
-// .job-header {
-//   font-size: 15px;
-//   padding: 0 40px 10px;
-
-//   @media #{$mobile-only} {
-//     padding: 60px 15px 25px 15px;
-//     border-bottom: 2px dotted #b92b27;
-//   }
-// }
-

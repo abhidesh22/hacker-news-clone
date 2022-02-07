@@ -14,7 +14,7 @@ export class UserInfoComponent implements OnInit {
 
   userId!: string;
   userDetails!: UserInfo;
-
+  userCreatedDate!: string;
   routeSubscription!: Subscription;
   userSubscription!: Subscription;
 
@@ -29,6 +29,7 @@ export class UserInfoComponent implements OnInit {
       this.userSubscription = this.hackernewsApiService.getUserInfo(this.userId)
       .subscribe((data: UserInfo) => {
         this.userDetails = data;
+        this.userCreatedDate = new Date(data.created * 1000).toLocaleString();
       });
     });
   }

@@ -4,7 +4,7 @@
 <div *ngIf="userDetails" class="profile">
     <div class="main-details">
       <p>user:    {{ userDetails.id }}</p>
-      <p class="created">created: {{ userDetails.created | convertTime}}</p>
+      <p class="created">created: {{ userCreatedDate }}</p>
       <p>karma:    {{ userDetails.karma }}</p>
     </div>
     <div class="other-details" *ngIf="userDetails.about">

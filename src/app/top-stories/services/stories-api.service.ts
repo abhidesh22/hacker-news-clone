@@ -1,6 +1,5 @@
 import { HackernewsApiService } from './../../shared/services/hackernews-api.service';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({

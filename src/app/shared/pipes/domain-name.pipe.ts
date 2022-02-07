@@ -10,6 +10,6 @@ export class DomainNamePipe implements PipeTransform {
         const domain = (new URL(url)).hostname.replace('www.','');
         return `(${domain})`;
     }
-    return `(${url})`;
+    return "";
   }
 }
